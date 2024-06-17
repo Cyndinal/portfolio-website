@@ -10,15 +10,11 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
 import {Simulate} from "react-dom/test-utils";
-import select = Simulate.select;
 import Image from "next/image";
-import {FileTypes} from "@/app/FileTypes";
-
 
 function Page() {
 
@@ -27,28 +23,27 @@ function Page() {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [textContent, setTextContent] = useState("")
-
-    const [webDev, setWebDev] = useState("Web Development")
-    const [loading, setLoading] = useState(false)
-    const [preview, setPreview] = useState<null | string>(null)
+    //
+    // const [loading, setLoading] = useState(false)
+    // const [preview, setPreview] = useState<null | string>(null)
     const inputFileRef = useRef<HTMLInputElement>(null)
     const ref = useRef<HTMLFormElement>(null)
 
-    const handleFormSubmit=async (formData:FormData)=>{
-       const firstName1 = formData.get(firstName)
-       const lastName1 = formData.get(lastName)
-       const email1 = formData.get(email)
-       const phone1 = formData.get(phone)
-       const textContent1 = formData.get(textContent)
-
-        ref.current?.reset()
-        await createPostAction(formData)
-    }
-      const handleImage = (event:React.ChangeEvent<HTMLInputElement>)=>{
-      const files: File | undefined =  event.target.files?.[0]
-          if(files){
-             setPreview(URL.createObjectURL(files))
-          }}
+    // const handleFormSubmit=async (formData:FormData)=>{
+    //    const firstName1 = formData.get(firstName)
+    //    const lastName1 = formData.get(lastName)
+    //    const email1 = formData.get(email)
+    //    const phone1 = formData.get(phone)
+    //    const textContent1 = formData.get(textContent)
+    //
+    //     ref.current?.reset()
+    //     await createPostAction(formData)
+    // }
+    //   const handleImage = (event:React.ChangeEvent<HTMLInputElement>)=>{
+    //   const files: File | undefined =  event.target.files?.[0]
+    //       if(files){
+    //          setPreview(URL.createObjectURL(files))
+    //       }}
 
 
     return (
@@ -60,28 +55,28 @@ function Page() {
             <section className={'flex-1 container md:justify-between md:flex '}>
 
                <div className={''}>
-                {preview && (
-                        <Image src={preview} alt={"Preview"}
-                               className={"object-cover rounded-md"} width={400} height={100}/>
-                )}
+                {/*{preview && (*/}
+                {/*        <Image src={preview} alt={"Preview"}*/}
+                {/*               className={"object-cover rounded-md"} width={400} height={100}/>*/}
+                {/*)}*/}
 
-                 {preview &&
-                     <div className={'flex justify-between '}>
-                         <div
-                             className={'flex bg-secondaryRed rounded-md items-center w-[25%] font-bold cursor-pointer'}
-                             onClick={() => inputFileRef.current?.click()}>
-                             <RepeatIcon size={20} className={'items-center rounded-md'}/> Change
-                         </div>
+                {/* {preview &&*/}
+                {/*     <div className={'flex justify-between '}>*/}
+                {/*         <div*/}
+                {/*             className={'flex bg-secondaryRed rounded-md items-center w-[25%] font-bold cursor-pointer'}*/}
+                {/*             onClick={() => inputFileRef.current?.click()}>*/}
+                {/*             <RepeatIcon size={20} className={'items-center rounded-md'}/> Change*/}
+                {/*         </div>*/}
 
-                         <div className={'flex bg-DeepRed rounded-md items-center w-[25%] font-bold cursor-pointer'}
-                              onClick={() => setPreview(null)}>
-                             <XIcon size={20} className={'items-center rounded-md'}/> Cancel
-                         </div>
+                {/*         <div className={'flex bg-DeepRed rounded-md items-center w-[25%] font-bold cursor-pointer'}*/}
+                {/*              onClick={() => setPreview(null)}>*/}
+                {/*             <XIcon size={20} className={'items-center rounded-md'}/> Cancel*/}
+                {/*         </div>*/}
 
-                     </div>
+                {/*     </div>*/}
 
 
-                 }
+                {/* }*/}
 
 
                </div>
@@ -89,9 +84,9 @@ function Page() {
 
                 <div className={'flex flex-col flex-1 '}>
                 <form className={'flex flex-col items-center space-y-2 rounded-md  w-full'}
-                      ref={ref}
+                      // ref={ref}
                       action={formData => {
-                        const promise = handleFormSubmit(formData)
+                        // const promise = handleFormSubmit(formData)
                     }}>
 
                         <input type={'text'}
@@ -123,7 +118,8 @@ function Page() {
                                 <Button
                                     onClick={() => inputFileRef.current?.click()}
                                     className={'bg-secondaryRed'}>
-                                    {preview ? ("Change") : ("Add")} file
+                                    Add
+                                    {/*{preview ? ("Change") : ("Add")} file*/}
                                 </Button></div>
                             <Select>
                                 <SelectTrigger className="w-[250px]">
@@ -169,7 +165,6 @@ function Page() {
                         <input hidden
                                multiple={true}
                                ref={inputFileRef}
-                               onChange={handleImage}
                                type={'file'} accept={'image/*'}/>
 
 
