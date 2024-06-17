@@ -34,14 +34,6 @@ function Page() {
     const inputFileRef = useRef<HTMLInputElement>(null)
     const ref = useRef<HTMLFormElement>(null)
 
-
-
-
-
-
-
-
-
     const handleFormSubmit=async (formData:FormData)=>{
        const firstName1 = formData.get(firstName)
        const lastName1 = formData.get(lastName)
@@ -49,31 +41,14 @@ function Page() {
        const phone1 = formData.get(phone)
        const textContent1 = formData.get(textContent)
 
-
-        setFirstName("")
-        setLastName("")
-        setPhone("")
-        setTextContent("")
-        setEmail("")
-
+        ref.current?.reset()
         await createPostAction(formData)
     }
       const handleImage = (event:React.ChangeEvent<HTMLInputElement>)=>{
       const files: File | undefined =  event.target.files?.[0]
           if(files){
              setPreview(URL.createObjectURL(files))
-          }
-          const reader = new FileReader()
-          reader.onerror = ()=>console.log("Error")
-          reader.onabort= ()=>console.log("Upload aborted")
-
-
-
-
-      }
-
-
-
+          }}
 
 
     return (
@@ -81,9 +56,6 @@ function Page() {
             <code className={'mb-5 flex items-center justify-center text-3xl text-accent'}>
                 Let work together!👨🏾‍💻
             </code>
-
-
-
 
             <section className={'flex-1 container md:justify-between md:flex '}>
 
@@ -116,8 +88,10 @@ function Page() {
 
 
                 <div className={'flex flex-col flex-1 '}>
-                <form className={'flex flex-col items-center space-y-2 rounded-md  w-full'} action={formData => {
-                        // const promise = handleFormSubmit(formData)
+                <form className={'flex flex-col items-center space-y-2 rounded-md  w-full'}
+                      ref={ref}
+                      action={formData => {
+                        const promise = handleFormSubmit(formData)
                     }}>
 
                         <input type={'text'}
