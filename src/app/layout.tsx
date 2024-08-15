@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jetBrainsMono.variable} bg-secondaryDark text-secondaryWhite w-screen h-screen ` }>
+      <body className={`${jetBrainsMono.variable} bg-secondaryDark text-secondaryWhite flex flex-col min-h-screen ` }>
       <Header/>
       {/*<StairTransition/>*/}
       {children}

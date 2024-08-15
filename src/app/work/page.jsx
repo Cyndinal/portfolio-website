@@ -45,7 +45,7 @@ function Page() {
         <section className={'md:flex container md:justify-between flex-1  space-y-4 p-20 '}>
 
             <div className={''}>
-            <Image src={'/img1.jpg'} alt={'Slider Image'} width={2000} height={250} className={''}/>
+            <Image src={'/img1.jpg'} alt={'Slider Image'} width={1000} height={250} className={''}/>
 
                 {/*SWIPER SWIPER WIPER SWIPERjkngj bjbndolkbnn dij bdsoinpsjiu ts gnsiudjlknskdj bsdfd*/}
 

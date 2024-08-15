@@ -7,12 +7,13 @@ import Image from "next/image";
 
 
 const socialList = [
-    {name:"Github",icon:"/github-142-svgrepo-com.svg",path:"https:www.github.com/Cydinal"},
-     {name:"Whatsapp",icon:"/whatsapp-svgrepo-com.svg",path:"+233 559-372-778"},
-    {name:"X",icon:"/twitter-color-svgrepo-com.svg",path:"+233 559-372-778"},
-    {name:"Discord",icon:"/discord-icon-svgrepo-com.svg",path:""},
-    {name:"Email",icon:"/email-opened-svgrepo-com.svg",path:"Discord.com"},
-    {name:"Medium",icon:"/medium-svgrepo-com.svg",path:"Medium.com"},
+    {name:"Github",icon:"/github-142-svgrepo-com.svg",path:"https://github.com/Cyndinal"},
+     {name:"Whatsapp",icon:"/whatsapp-svgrepo-com.svg",path:"https://wa.me/0559372778?text=LetsConnect"},
+    // {name:"X",icon:"/twitter-color-svgrepo-com.svg",path:"+233 559-372-778"},
+    // {name:"Discord",icon:"/discord-icon-svgrepo-com.svg",path:""},
+    {name:"Email",icon:"/email-opened-svgrepo-com.svg",path:"/contact"},
+    // {name:"SMS",icon:"",path:"0559372778"},
+    // {name:"Medium",icon:"/medium-svgrepo-com.svg",path:"Medium.com"},
 
 ]
 

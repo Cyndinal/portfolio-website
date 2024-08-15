@@ -5,11 +5,11 @@ import MobileView from "@/components/MobileView";
 import {Button} from "@/components/ui/button";
 const Header = ()=>{
     return(
-        <header className={"shadow-lg z-40 fixed w-full bg-secondaryDark"}>
+        <header className={"shadow-lg z-40 fixed w-full  bg-secondaryDark"}>
 
                 <div className={'container mx-auto flex justify-between items-center'}>
                     <Link href={'/'}>
-                        <h1 className={'text-2xl font-extrabold text-accent z-50'}>Max Cydin <span className={'text-accent '}>.</span></h1>
+                        <h1 className={'text-2xl font-extrabold text-accent z-50'}>PORTFOLIO<span className={'text-accent '}>.</span></h1>
                     </Link>
 
                     <div className={'hidden md:flex items-center gap-8'}>

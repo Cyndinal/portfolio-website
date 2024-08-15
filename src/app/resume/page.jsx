@@ -37,7 +37,7 @@ const education={
     items:[
         {school:"🏫Prempeh College-Ghana",course:"👨🏾‍🎓General Science",duration:"🗓️3 years"},
         {school:"🏫KNUST",course:"👨🏾‍🎓BSc.Computer Engineering",duration:"🗓️4 years"},
-        {school:"🏫SAIT",course:"👨🏾‍🎓Information Technology",duration:"🗓️2 years"},
+        // {school:"🏫SAIT",course:"👨🏾‍🎓Information Technology",duration:"🗓️2 years"},
     ]
 }
 const skills={
@@ -76,23 +76,30 @@ function Page() {
         <Tabs defaultValue={'experience'} className={'container p-20'}>
             <div className={' md:justify-between '}>
 
-                <TabsList className={'flex justify-center container gap-2  items-center w-full '}>
-                    <TabsTrigger value={'experience'} className={'bg-secondary  text-balance font-medium p-2 rounded-md'}>Experience</TabsTrigger>
-                    <TabsTrigger className={' bg-secondary    p-2 rounded-md'} value={'education'}>Education</TabsTrigger>
-                    <TabsTrigger className={' bg-secondary    p-2 rounded-md'} value={'skills'}>Skills</TabsTrigger>
-                    <TabsTrigger className={' bg-secondary  p-2  rounded-md'} value={'about'}>About&nbsp;Me</TabsTrigger>
+                <TabsList className={'flex justify-center  gap-2  items-center'}>
+                    <TabsTrigger value={'experience'} className={'bg-secondary px-4 py-1 rounded-md'}>Experience</TabsTrigger>
+                    <TabsTrigger className={' bg-secondary px-4 py-1 rounded-md'} value={'education'}>Education</TabsTrigger>
+                    <TabsTrigger className={' bg-secondary px-4 py-1 rounded-md'} value={'skills'}>Skills</TabsTrigger>
+                    <TabsTrigger className={' bg-secondary px-4 py-1 rounded-md'} value={'about'}>About&nbsp;Me</TabsTrigger>
 
                 </TabsList>
 
             </div>
 
-            <div className={'flex justify-center mx-auto mt-10'}>
+            <div className={'flex  justify-center mx-auto mt-auto'}>
 
                <TabsContent value={'experience'}>
                    <div className={'items-center container'}>
-                    <code className={'font-bold text-2xl '}> {experience.title}</code>
-                   <div >
-                     {experience.description}
+                    <code className={'font-bold text-2xl md:text-4xl '}>
+                        {experience.title}
+                    </code>
+                       <br/>
+                       <br/>
+                       <br/>
+
+                   <div
+                       className={'flex text-wrap leading-loose italic'}>
+                       {experience.description}
                    </div>
 
                              <ScrollArea className={'h-[400px] mt-5 '}>
@@ -105,8 +112,15 @@ function Page() {
                                            <code>📆{item.duration}||</code>
                                            <code className={'font-light'}>👨🏾‍💻{item.position}</code>
                                            <hr className={'text-accent'}/>
-                                           <hr/>
-                                           <hr/>
+                                           <hr className={'text-DeepRed'}/>
+                                           <hr className={'text-accent'}/>
+                                           <hr className={'text-DeepRed'}/>
+                                           <hr className={'text-DeepRed'}/>
+                                           <hr className={'text-accent'}/>
+                                           <hr className={'text-DeepRed'}/>
+                                           <hr className={'text-accent border-secondaryDark'}/>
+                                           <hr className={'text-accent'}/>
+
 
                                        </div>
                                    </div>
